@@ -13,12 +13,12 @@ const pages: ((
   props: AnimatedProps<{ style: CSSProperties }>
 ) => React.ReactElement)[] = [
   ({ style }) => (
-    <animated.div style={{ ...style, background: "magenta" }}>
+    <animated.div style={{ ...style, background: "black" }}>
       Hi, I'm Berke
     </animated.div>
   ),
   ({ style }) => (
-    <animated.div style={{ ...style, background: "lightblue" }}>
+    <animated.div style={{ ...style, background: "teal" }}>
       a critical thinker
     </animated.div>
   ),

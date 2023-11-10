@@ -50,15 +50,21 @@ const transitionsConfig = [
   {
     from: { opacity: 0, transform: "translate3d(100%,0,0)" },
     leave: { opacity: 0, transform: "translate3d(100%,0,0)" },
-  }
+  },
 ];
 
-
-
-
 export default function App() {
-  const [index, set] = useState(0);
-  const onClick = () => set((state) => (state + 1) % 4);
+  const [index, setIndex] = useState(0);
+  const [slideshowComplete, setSlideshowComplete] = useState(false);
+  const onClick = () => {
+    const nextIndex = (index + 1) % 4;
+    setIndex(nextIndex);
+
+    // Check if the slideshow is complete
+    if (nextIndex === 0) {
+      setSlideshowComplete(true);
+    }
+  };
   const transRef = useSpringRef();
 
   const transitions = useTransition(index, {
@@ -72,17 +78,32 @@ export default function App() {
     transRef.start();
   }, [index]);
 
-
-  
-  return (
-    <div
-      className={`flex fill ${styles.container}`}
-      onClick={onClick}
-    >
-      {transitions((style, i) => {
-        const Page = pages[i];
-        return <Page style={style} />;
-      })}
-    </div>
-  );
+  if (slideshowComplete) {
+    // Render the landing page content
+    return (
+      <div className="landing-page bg-slate-100 w-screen h-screen">
+        <nav className="landing-navbar h-[10vh] w-full border-black border-b-4 text-black flex justify-end items-end">
+          <ul className="flex justify-center items-center gap-8 cursor-pointer p-4 text-2xl h-full ">
+            <li className="hover:text-teal-200">About</li>
+            <li className="hover:text-teal-200">Portfolio</li>
+            <li className="hover:text-teal-200">Contact</li>
+            <li className="hover:text-teal-200">Blog</li>
+          </ul>
+        </nav>
+      </div>
+    );
+  } else {
+    // Render the slideshow
+    return (
+      <div
+        className={`flex fill ${styles.container}`}
+        onClick={onClick}
+      >
+        {transitions((style, i) => {
+          const Page = pages[i];
+          return <Page style={style} />;
+        })}
+      </div>
+    );
+  }
 }

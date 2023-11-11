@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState, CSSProperties, useEffect } from "react";
 import {
   useTransition,
@@ -14,17 +15,29 @@ const pages: ((
 ) => React.ReactElement)[] = [
   ({ style }) => (
     <animated.div style={{ ...style, background: "black" }}>
-      Hi, I'm Berke
+      <main className="flex w-full h-full ">
+        <div className="flex flex-col justify-center items-center w-[38%] text-center p-10">
+          <h1>Hi, I'm Berke</h1>
+        </div>
+        <div className="flex flex-col justify-center items-center w-[62%]">
+          <Image
+            src="/memoji.jpeg" 
+            alt="Aloha Cool"
+            width={600} 
+            height={300} 
+          />
+        </div>
+      </main>
     </animated.div>
   ),
   ({ style }) => (
     <animated.div style={{ ...style, background: "teal" }}>
-      a critical thinker
+      an interpreter
     </animated.div>
   ),
   ({ style }) => (
     <animated.div style={{ ...style, background: "lightgreen" }}>
-      an Interpreter
+      a dreamer
     </animated.div>
   ),
   ({ style }) => (
@@ -90,6 +103,12 @@ export default function App() {
             <li className="hover:text-teal-200">Blog</li>
           </ul>
         </nav>
+        <main className="flex">
+          <img
+            src="../../public/memoji.jpeg"
+            alt=""
+          />
+        </main>
       </div>
     );
   } else {

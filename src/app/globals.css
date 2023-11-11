@@ -25,3 +25,9 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+.landing-navbar{
+  width: 100vw;
+  height: 10vh;
+}

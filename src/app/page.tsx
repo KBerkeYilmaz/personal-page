@@ -16,15 +16,15 @@ const pages: ((
   ({ style }) => (
     <animated.div style={{ ...style, background: "black" }}>
       <main className="flex w-full h-full ">
-        <div className="flex flex-col justify-center items-center w-[38%] text-center p-10">
+        <div className="flex flex-col justify-center items-center w-[50%] text-center p-10">
           <h1>Hi, I'm Berke</h1>
         </div>
-        <div className="flex flex-col justify-center items-center w-[62%]">
+        <div className="flex flex-col justify-center items-center w-[50%]">
           <Image
-            src="/memoji.jpeg" 
+            src="/memoji.webp"
             alt="Aloha Cool"
-            width={600} 
-            height={300} 
+            width={600}
+            height={400}
           />
         </div>
       </main>
@@ -94,8 +94,8 @@ export default function App() {
   if (slideshowComplete) {
     // Render the landing page content
     return (
-      <div className="landing-page bg-slate-100 w-screen h-screen">
-        <nav className="landing-navbar h-[10vh] w-full border-black border-b-4 text-black flex justify-end items-end">
+      <div className="landing-page bg-background w-screen h-screen">
+        <nav className="landing-navbar h-[10vh] w-full border-black border-b-4 text-slate-200 flex justify-end items-end text-text">
           <ul className="flex justify-center items-center gap-8 cursor-pointer p-4 text-2xl h-full ">
             <li className="hover:text-teal-200">About</li>
             <li className="hover:text-teal-200">Portfolio</li>
@@ -103,11 +103,11 @@ export default function App() {
             <li className="hover:text-teal-200">Blog</li>
           </ul>
         </nav>
-        <main className="flex">
-          <img
-            src="../../public/memoji.jpeg"
-            alt=""
-          />
+        <main className="w-screen h-full flex justify-center items-start">
+          <h1 className="text-text text-[8rem] flex">
+            <div>Hi,</div>
+            <div>I'm Berke</div>
+          </h1>
         </main>
       </div>
     );

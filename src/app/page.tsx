@@ -60,7 +60,7 @@ export default function App() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 4 }}
             >
-              I'm a{" "}
+              I&apos;m a{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent ">
                 software developer{" "}
               </span>{" "}
@@ -73,7 +73,7 @@ export default function App() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 7 }}
             >
-              I'm always open to collaborations and new ideas. Feel free to contact me, we can build great things together.
+              I&apos;m always open to collaborations and new ideas. Feel free to contact me, we can build great things together.
             </motion.h2>
           </div>
           <div className="flex items-center justify-center w-full my-10">

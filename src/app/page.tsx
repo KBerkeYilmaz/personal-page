@@ -73,17 +73,19 @@ export default function App() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 7 }}
             >
-              I&apos;m always open to collaborations and new ideas. Feel free to contact me, we can build great things together.
+              I&apos;m always open to collaborations and new ideas. Feel free to
+              contact me, we can build great things together.
             </motion.h2>
           </div>
           <div className="flex items-center justify-center w-full my-10">
-          <motion.button
-          className="text-text text-2xl w-44 h-20 bg-primary rounded-full p-4 hover:shadow-3xl hover:shadow-primary hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out"
+            <motion.button
+              className="text-text text-2xl w-44 h-20 bg-primary rounded-full p-4 hover:shadow-3xl hover:shadow-primary hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 10 }}
+              onClick={() => window.location.href = 'mailto:kberkeyilmaz@gmail.com'}
+
             >
-            
               Contact
             </motion.button>
           </div>

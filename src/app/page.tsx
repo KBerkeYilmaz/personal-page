@@ -3,7 +3,6 @@
 import Image from "next/image";
 import React, { useState, CSSProperties, useEffect } from "react";
 import { motion } from "framer-motion";
-
 import styles from "./styles.module.css";
 
 export default function App() {
@@ -15,7 +14,7 @@ export default function App() {
 
   return (
     <div className="landing-page bg-background w-screen h-screen flex flex-col items-center">
-      <main className="w-3/4 h-full flex flex-col justify-center gap-4">
+      <main className="w-3/4 h-full flex justify-center">
         <div className="w-1/2 h-full flex flex-col items-start justify-center">
           <motion.h1
             initial={{ opacity: 0, x: 15 }}
@@ -50,15 +49,16 @@ export default function App() {
             <motion.h2
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 2 }}
+              transition={{ duration: 0.8, delay: 2.3 }}
             >
               Hi, my name is Berke Yilmaz. &nbsp;
             </motion.h2>
 
             <motion.h2
+              className="text-justify"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 4 }}
+              transition={{ duration: 0.8, delay: 4.2 }}
             >
               I&apos;m a{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent ">
@@ -69,9 +69,10 @@ export default function App() {
               backends.
             </motion.h2>
             <motion.h2
+              className="text-justify"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 7 }}
+              transition={{ duration: 0.8, delay: 5.2 }}
             >
               I&apos;m always open to collaborations and new ideas. Feel free to
               contact me, we can build great things together.
@@ -82,13 +83,21 @@ export default function App() {
               className="text-text text-2xl w-44 h-20 bg-primary rounded-full p-4 hover:shadow-3xl hover:shadow-primary hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 10 }}
-              onClick={() => window.location.href = 'mailto:kberkeyilmaz@gmail.com'}
-
+              transition={{ duration: 0.8, delay: 6.2 }}
+              onClick={() =>
+                (window.location.href = "mailto:kberkeyilmaz@gmail.com")
+              }
             >
               Contact
             </motion.button>
           </div>
+        </div>
+        <div className="w-1/2 h-full flex flex-col items-start justify-center">
+          <ul className="text-background">
+            <li>About Me</li>
+            <li>Works</li>
+            <li>Résumé</li>
+          </ul>
         </div>
       </main>
     </div>

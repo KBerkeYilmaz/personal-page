@@ -46,7 +46,7 @@ export default function App() {
               ></path>
             </svg>
           </motion.h1>
-          <div className="flex flex-col text-text text-lg">
+          <div className="flex flex-col text-text text-lg mt-2">
             <motion.h2
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -62,12 +62,17 @@ export default function App() {
             >
               I'm a{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent ">
-                software developer {" "}
-              </span> with an emphasis on frontend. 
-              I love to build (and occasionally design) pixel-perfect, beautiful
-              interfaces with scalable, fast backends.
+                software developer{" "}
+              </span>{" "}
+              with an emphasis on frontend. I love to build (and occasionally
+              design) pixel-perfect, beautiful interfaces with scalable, fast
+              backends.
             </motion.h2>
-            
+          </div>
+          <div className="flex items-center justify-center w-full my-10">
+            <button className="text-text text-2xl w-44 h-20 bg-primary rounded-full p-4 hover:shadow-3xl hover:shadow-primary hover:-translate-y-1 transition duration-300 ease-in-out">
+              Contact
+            </button>
           </div>
         </div>
       </main>

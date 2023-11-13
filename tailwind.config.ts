@@ -16,10 +16,13 @@ const config: Config = {
       colors: {
         background: "#040e1a",
         text: "#D8CEE8",
-        primary: "#17df04",
+        primary: "#25b617",
         secondary: "#d8cee8",
         accent: "#FFA500",
       },
+      boxShadow: {
+        '3xl': '0 10px 90px 5px rgba(0, 0, 0, 0.3)',
+      }
     },
   },
   plugins: [],

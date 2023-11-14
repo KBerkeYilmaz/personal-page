@@ -46,8 +46,8 @@ export default function App() {
           </motion.h1>
           <div className="flex flex-col text-text text-lg mt-2">
             <motion.h2
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0}}
+              animate={{ opacity: 1}}
               transition={{ duration: 0.8, delay: 1.7 }}
             >
               Hi, my name is Berke Yilmaz. &nbsp;
@@ -93,11 +93,14 @@ export default function App() {
         </div>
         <div className="w-1/2 min-h-full h-fit flex items-center justify-end">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y:30 }}
+            animate={{ opacity: 1, y:0 }}
             transition={{ duration: 0.8, delay: 4.1 }}
           >
-            <ul className="text-text text-3xl flex p-20 flex-col border-r-2 border-text h-fit gap-32">
+            <ul className="text-text  bg-transparent text-3xl flex p-10 flex-col border-r-2 border-primary shadow-right h-fit gap-24">
+              <li className="li-hover-animate from-primary-to-accent cursor-pointer hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out">
+                Home
+              </li>
               <li className="li-hover-animate from-primary-to-accent cursor-pointer hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out">
                 About Me
               </li>

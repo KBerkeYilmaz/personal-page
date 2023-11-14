@@ -51,3 +51,4 @@ body {
 .from-primary-to-accent {
   --tw-gradient-stops: theme('colors.primary'), theme('colors.accent');
 }
+

@@ -27,3 +27,27 @@ body {
 }
 
 
+.li-hover-animate {
+  position: relative;
+  overflow: hidden;
+}
+
+.li-hover-animate::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--tw-gradient-stops));
+  transition: width 0.3s ease-out;
+  z-index: -1;
+}
+
+.li-hover-animate:hover::after {
+  width: 100%;
+}
+
+.from-primary-to-accent {
+  --tw-gradient-stops: theme('colors.primary'), theme('colors.accent');
+}

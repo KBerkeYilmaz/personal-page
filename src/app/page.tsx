@@ -18,7 +18,7 @@ export default function App() {
           <motion.h1
             initial={{ opacity: 0, x: 15 }}
             animate={{ opacity: 1, x: -5 }}
-            transition={{ duration: 2 }}
+            transition={{ duration: 1.3 }}
           >
             <motion.svg
               id="welcome_svg"
@@ -57,7 +57,7 @@ export default function App() {
               className="text-justify"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 4.2 }}
+              transition={{ duration: 0.8, delay: 2.3 }}
             >
               I&apos;m a{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent ">
@@ -71,7 +71,7 @@ export default function App() {
               className="text-justify"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 5.2 }}
+              transition={{ duration: 0.8, delay: 2.9 }}
             >
               I&apos;m always open to collaborations and new ideas. Feel free to
               contact me, we can build great things together.
@@ -82,7 +82,7 @@ export default function App() {
               className="text-text text-2xl w-44 h-20 bg-primary rounded-full p-4 hover:shadow-3xl hover:shadow-primary hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 6.2 }}
+              transition={{ duration: 0.8, delay: 3.5 }}
               onClick={() =>
                 (window.location.href = "mailto:kberkeyilmaz@gmail.com")
               }
@@ -95,9 +95,9 @@ export default function App() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 7 }}
+            transition={{ duration: 0.8, delay: 4.1 }}
           >
-            <ul className="text-text text-3xl flex p-10 flex-col rounded-md h-fit gap-14 mb-10">
+            <ul className="text-text text-3xl flex p-20 flex-col border-r-2 border-text h-fit gap-32">
               <li className="li-hover-animate from-primary-to-accent cursor-pointer hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out">
                 About Me
               </li>

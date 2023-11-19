@@ -7,13 +7,38 @@ import "./globals.css";
 
 export default function App() {
   const [showGreeting, setShowGreeting] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollY(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Calculate the background color based on scroll position
+  // This is a simple example; you can create more complex formulas as needed
+  const backgroundColor = `rgba(0, 0, 0, ${Math.min(
+    scrollY / 1000,
+    0.5
+  )})`;
 
   useEffect(() => {
     setShowGreeting(true);
   }, []);
 
   return (
-    <div className="landing-page bg-background w-screen h-screen flex flex-col items-center">
+    <div
+      className="landing-page bg-background w-screen h-screen flex flex-col items-center"
+      style={{ backgroundColor, transition: "background-color 0.3s ease" }}
+    >
+      <MouseTracker />
       <main className="w-3/4 h-full flex justify-center">
         <div className="w-1/2 h-full flex flex-col items-start justify-center">
           <motion.h1
@@ -74,7 +99,7 @@ export default function App() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 2.9 }}
             >
-              <MouseTracker />
+             
             </motion.h2>
           </div>
           <div className="flex items-center justify-center w-full my-10">

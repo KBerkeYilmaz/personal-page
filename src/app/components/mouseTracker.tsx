@@ -1,29 +1,38 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function MouseTracker() {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-    // Function to update the mouse position
-    const handleMouseMove = (event) => {
-        setMousePosition({ x: event.clientX, y: event.clientY });
+  const handleMouseMove = (event) => {
+    setMousePosition({ x: event.clientX, y: event.clientY });
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
     };
+  }, []);
 
-    useEffect(() => {
-        // Add mouse move event listener when the component mounts
-        window.addEventListener('mousemove', handleMouseMove);
+  const backgroundStyle = {
+    backgroundPosition: `${mousePosition.x}px ${mousePosition.y}px`,
+  };
 
-        // Remove event listener when the component unmounts
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, []);
-
-    return (
-        <div>
-            <p>Mouse X position: {mousePosition.x}</p>
-            <p>Mouse Y position: {mousePosition.y}</p>
-        </div>
-    );
+  return (
+    <div
+      style={{
+        position: "absolute",
+        width: "100vw",
+        height: "100vh",
+        background:
+          "radial-gradient(circle at center, rgba(255,255,255,0.3) 20%, transparent 20%)",
+        ...backgroundStyle,
+      }}
+    >
+      {/* Your content here */}
+    </div>
+  );
 }
 
 export default MouseTracker;

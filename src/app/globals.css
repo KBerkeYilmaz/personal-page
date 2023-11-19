@@ -52,3 +52,8 @@ body {
   --tw-gradient-stops: theme('colors.primary'), theme('colors.accent');
 }
 
+/* Add this to your CSS file */
+body {
+  position: relative;
+}
+

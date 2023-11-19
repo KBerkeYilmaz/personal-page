@@ -2,6 +2,7 @@
 
 import React, { useState, CSSProperties, useEffect } from "react";
 import { motion } from "framer-motion";
+import MouseTracker from "./components/mouseTracker";
 import "./globals.css";
 
 export default function App() {
@@ -46,8 +47,8 @@ export default function App() {
           </motion.h1>
           <div className="flex flex-col text-text text-lg mt-2">
             <motion.h2
-              initial={{ opacity: 0}}
-              animate={{ opacity: 1}}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.7 }}
             >
               Hi, my name is Berke Yilmaz. &nbsp;
@@ -63,8 +64,8 @@ export default function App() {
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent ">
                 software developer{" "}
               </span>{" "}
-              with an emphasis on frontend. I love to build (and occasionally
-              design) pixel-perfect, beautiful interfaces with scalable, fast
+              with an emphasis on frontend. I love building (and occasionally
+              designing) pixel-perfect, beautiful interfaces with scalable, fast
               backends.
             </motion.h2>
             <motion.h2
@@ -73,8 +74,7 @@ export default function App() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 2.9 }}
             >
-              I&apos;m always open to collaborations and new ideas. Feel free to
-              contact me, we can build great things together.
+              <MouseTracker />
             </motion.h2>
           </div>
           <div className="flex items-center justify-center w-full my-10">
@@ -93,8 +93,8 @@ export default function App() {
         </div>
         <div className="w-1/2 min-h-full h-fit flex items-center justify-end">
           <motion.div
-            initial={{ opacity: 0, y:30 }}
-            animate={{ opacity: 1, y:0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 4.1 }}
           >
             <ul className="text-text  bg-transparent text-3xl flex p-10 flex-col border-r-2 border-primary shadow-right h-fit gap-24">

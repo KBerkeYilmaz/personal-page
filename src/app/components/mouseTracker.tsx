@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 function MouseTracker() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
   const handleMouseMove = (event) => {
-    setMousePosition({ x: event.clientX, y: event.clientY });
+    document.documentElement.style.setProperty("--mouse-x", event.clientX + "px");
+    document.documentElement.style.setProperty("--mouse-y", event.clientY + "px");
   };
 
   useEffect(() => {
@@ -15,23 +14,16 @@ function MouseTracker() {
     };
   }, []);
 
-  const backgroundStyle = {
-    backgroundPosition: `${mousePosition.x}px ${mousePosition.y}px`,
-  };
-
   return (
     <div
+      className="track-pad"
       style={{
+        zIndex: -10,
         position: "absolute",
         width: "100vw",
-        height: "100vh",
-        background:
-          "radial-gradient(circle at center, rgba(255,255,255,0.3) 20%, transparent 20%)",
-        ...backgroundStyle,
+        height: "100vh"
       }}
-    >
-      {/* Your content here */}
-    </div>
+    ></div>
   );
 }
 

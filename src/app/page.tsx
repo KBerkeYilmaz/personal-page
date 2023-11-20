@@ -22,8 +22,6 @@ export default function App() {
     };
   }, []);
 
-  // Calculate the background color based on scroll position
-  // This is a simple example; you can create more complex formulas as needed
   const backgroundColor = `rgba(0, 0, 0, ${Math.min(
     scrollY / 1000,
     0.5

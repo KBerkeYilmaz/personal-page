@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, CSSProperties, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Navbar from "./components/Navbar/Navbar";
 import MouseTracker from "./components/mouseTracker";
 import "./globals.css";
 
@@ -22,10 +23,7 @@ export default function App() {
     };
   }, []);
 
-  const backgroundColor = `rgba(0, 0, 0, ${Math.min(
-    scrollY / 1000,
-    0.5
-  )})`;
+  const backgroundColor = `rgba(0, 0, 0, ${Math.min(scrollY / 1000, 0.5)})`;
 
   useEffect(() => {
     setShowGreeting(true);
@@ -91,21 +89,19 @@ export default function App() {
               designing) pixel-perfect, beautiful interfaces with scalable, fast
               backends.
             </motion.h2>
-            <motion.h2
+            {/* <motion.h2
               className="text-justify"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 2.9 }}
-            >
-             
-            </motion.h2>
+            ></motion.h2> */}
           </div>
           <div className="flex items-center justify-center w-full my-10">
             <motion.button
               className="text-text text-2xl w-44 h-20 bg-primary rounded-full p-4 hover:shadow-3xl hover:shadow-primary hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 3.5 }}
+              transition={{ duration: 0.8, delay: 2.9 }}
               onClick={() =>
                 (window.location.href = "mailto:kberkeyilmaz@gmail.com")
               }
@@ -115,26 +111,7 @@ export default function App() {
           </div>
         </div>
         <div className="w-1/2 min-h-full h-fit flex items-center justify-end">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 4.1 }}
-          >
-            <ul className="text-text  bg-transparent text-3xl flex p-10 flex-col border-r-2 border-primary shadow-right h-fit gap-24">
-              <li className="li-hover-animate from-primary-to-accent cursor-pointer hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out">
-                Home
-              </li>
-              <li className="li-hover-animate from-primary-to-accent cursor-pointer hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out">
-                About Me
-              </li>
-              <li className="li-hover-animate from-primary-to-accent cursor-pointer hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out">
-                Works
-              </li>
-              <li className="li-hover-animate from-primary-to-accent cursor-pointer hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out">
-                Résumé
-              </li>
-            </ul>
-          </motion.div>
+          <Navbar />
         </div>
       </main>
     </div>

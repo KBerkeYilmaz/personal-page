@@ -38,8 +38,9 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, var(--tw-gradient-stops));
-  transition: width 0.3s ease-out;
+  background: theme("colors.text");
+  /* background: linear-gradient(to right, var(--tw-gradient-stops)); */
+  transition: width 0.25s ease-out;
   z-index: -1;
 }
 

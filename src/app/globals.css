@@ -8,6 +8,11 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -69,4 +74,20 @@ body {
       rgb(4, 14, 26) 100%
     )
     no-repeat;
+}
+
+.scrollbar-transparent::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollbar-transparent::-webkit-scrollbar-thumb {
+  background: transparent; 
+}
+
+.scrollbar-transparent::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.is-active {
+  transform: scale(1.05);
 }

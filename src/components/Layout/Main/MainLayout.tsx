@@ -28,10 +28,10 @@ const MainLayout = ({ children }) => {
     >
       <MouseTracker />
       <main className="w-3/4 h-full flex justify-center">
-        <div className="w-1/2 h-full flex flex-col items-start justify-center">
+        <div className="w-3/4 h-full flex flex-col items-start justify-center">
           {children}
         </div>
-        <div className="w-1/2 min-h-full h-fit flex items-center justify-end">
+        <div className="w-1/4 min-h-full h-fit flex items-center justify-end">
           <Navbar />
         </div>
       </main>

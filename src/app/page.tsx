@@ -3,8 +3,9 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "@root/globals.css";
+import { NextPage } from 'next';
 
-const Home = () => {
+const Home: NextPage = () => {
   const [hasAnimationCompleted, setHasAnimationCompleted] = useState(false);
 
   useEffect(() => {

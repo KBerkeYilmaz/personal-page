@@ -13,8 +13,8 @@ const listItems = [
 ];
 
 const Navbar = () => {
-  const [activeItem, setActiveItem] = useState(null);
-  const handleItemClick = (key) => {
+  const [activeItem, setActiveItem] = useState<number | null>(null);
+  const handleItemClick = (key: number) => {
     setActiveItem(key);
   };
 
@@ -31,7 +31,7 @@ const Navbar = () => {
             <li
               key={item.key}
               className={`li-hover-animate from-primary-to-accent cursor-pointer ${
-                isActive ? "scale-105" : "hover:-translate-y-1 hover:scale-105"
+                isActive ? "scale-105 -translate-y-1" : "hover:-translate-y-1 hover:scale-105"
               } transition duration-300 ease-out`}
               onClick={() => !isActive && handleItemClick(item.key)}
             >

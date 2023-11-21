@@ -3,8 +3,9 @@
 import React, { useState, useEffect } from "react";
 import MouseTracker from "@/components/Effects/mouseTracker";
 import Navbar from "../Navbar/Navbar";
+import { Props } from "@/libs/types"
 
-const MainLayout = ({ children }) => {
+const MainLayout: React.FC<Props> = ({ children }) => {
   const [scrollY, setScrollY] = useState(0);
 
   const handleScroll = () => {

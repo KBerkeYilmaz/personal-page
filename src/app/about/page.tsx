@@ -1,4 +1,6 @@
-const About = () => {
+import { NextPage } from 'next';
+
+const About: NextPage = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center gap-10  min-h-max overflow-y-auto scroll-m-10 scrollbar-transparent">

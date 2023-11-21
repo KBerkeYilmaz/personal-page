@@ -23,6 +23,7 @@ const Home = () => {
     setHasAnimationCompleted(true);
   };
 
+
   return (
     <div>
       {!hasAnimationCompleted ? (

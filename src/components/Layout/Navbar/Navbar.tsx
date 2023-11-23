@@ -19,11 +19,12 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 3.5 }}
-    >
+    <div>
+      {/* <motion.nav
+    //   initial={{ opacity: 0, y: 30 }}
+    //   animate={{ opacity: 1, y: 0 }}
+    //   transition={{ duration: 0.8, delay: 3.5 }}
+    // > */}
       <ul className="text-text  bg-transparent text-2xl flex p-10 flex-col border-r-2 border-primary shadow-right h-fit gap-24">
         {listItems.map((item) => {
           const isActive = activeItem === item.key;
@@ -31,7 +32,9 @@ const Navbar = () => {
             <li
               key={item.key}
               className={`li-hover-animate from-primary-to-accent cursor-pointer ${
-                isActive ? "scale-105 -translate-y-1" : "hover:-translate-y-1 hover:scale-105"
+                isActive
+                  ? "scale-105 -translate-y-1"
+                  : "hover:-translate-y-1 hover:scale-105"
               } transition duration-300 ease-out`}
               onClick={() => !isActive && handleItemClick(item.key)}
             >
@@ -45,7 +48,8 @@ const Navbar = () => {
           );
         })}
       </ul>
-    </motion.nav>
+      {/* </motion.nav> */}
+    </div>
   );
 };
 

@@ -23,6 +23,16 @@ const Home: NextPage = () => {
     }
   }, []);
 
+
+  useEffect(() => {
+    if (!document.referrer) {
+      console.log("This page was accessed directly or refreshed.");
+    } else {
+      console.log("This page was accessed from another page.");
+    }
+  }, []);
+  
+
   const handleAnimationComplete = () => {
     setHasAnimationCompleted(true);
   };

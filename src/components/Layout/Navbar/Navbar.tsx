@@ -6,10 +6,10 @@ import Link from "next/link";
 import "@root/globals.css";
 
 const listItems = [
-  { placeholder: "Home", key: 0, href: "/" },
-  { placeholder: "About Me", key: 1, href: "/about" },
-  { placeholder: "Works", key: 2, href: "/works" },
-  { placeholder: "Résumé", key: 3, href: "/" },
+  { placeholder: "Home", id: "home-btn", href: "/" },
+  { placeholder: "About Me", id: "about-btn", href: "/about" },
+  { placeholder: "Works", id: "works-btn", href: "/works" },
+  { placeholder: "Résumé", id: "cv-btn", href: "/" },
 ];
 
 const Navbar = () => {
@@ -26,21 +26,24 @@ const Navbar = () => {
     //   transition={{ duration: 0.8, delay: 3.5 }}
     // > */}
       <ul className="text-text  bg-transparent text-2xl flex p-10 flex-col border-r-2 border-primary shadow-right h-fit gap-24">
-        {listItems.map((item) => {
-          const isActive = activeItem === item.key;
+        {listItems.map((item, index) => {
+          const isActive = activeItem === index;
           return (
             <li
-              key={item.key}
+              id={item.id}
+              key={index}
               className={`li-hover-animate from-primary-to-accent cursor-pointer ${
                 isActive
                   ? "scale-105 -translate-y-1"
                   : "hover:-translate-y-1 hover:scale-105"
               } transition duration-300 ease-out`}
-              onClick={() => !isActive && handleItemClick(item.key)}
+              onClick={() => !isActive && handleItemClick(index)}
             >
               <Link
                 href={item.href}
-                className={isActive ? "text-accent pointer-events-none" : ""}
+                className={`w-full h-full ${
+                  isActive ? "text-accent pointer-events-none" : ""
+                }`}
               >
                 {item.placeholder}
               </Link>

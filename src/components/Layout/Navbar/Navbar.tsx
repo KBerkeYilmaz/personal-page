@@ -37,17 +37,16 @@ const Navbar = () => {
                   ? "scale-105 -translate-y-1"
                   : "hover:-translate-y-1 hover:scale-105"
               } transition duration-300 ease-out`}
-              onClick={() => !isActive && handleItemClick(index)}
+              onClick={() => handleItemClick(index)}
             >
-              <Link
-                href={item.href}
-                onClick={() => !isActive && handleItemClick(index)}
-                className={`${
-                  isActive ? "text-accent pointer-events-none" : ""
-                }`}
-                aria-label={item.placeholder}
-              >
-                {item.placeholder}
+              <Link href={item.href}>
+                <div
+                  className={`${
+                    isActive ? "text-accent pointer-events-none" : ""
+                  }`}
+                >
+                  {item.placeholder}
+                </div>
               </Link>
             </li>
           );

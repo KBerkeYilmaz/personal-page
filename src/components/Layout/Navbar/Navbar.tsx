@@ -13,13 +13,13 @@ const listItems = [
 ];
 
 const Navbar = () => {
-  const [activeItem, setActiveItem] = useState<number | null>(null);
+  const [activeItem, setActiveItem] = useState<number>(0);
   const handleItemClick = (key: number) => {
     setActiveItem(key);
   };
 
   return (
-    <div>
+    <nav>
       {/* <motion.nav
     //   initial={{ opacity: 0, y: 30 }}
     //   animate={{ opacity: 1, y: 0 }}
@@ -41,9 +41,11 @@ const Navbar = () => {
             >
               <Link
                 href={item.href}
-                className={`w-full h-full ${
+                onClick={() => !isActive && handleItemClick(index)}
+                className={`${
                   isActive ? "text-accent pointer-events-none" : ""
                 }`}
+                aria-label={item.placeholder}
               >
                 {item.placeholder}
               </Link>
@@ -52,7 +54,7 @@ const Navbar = () => {
         })}
       </ul>
       {/* </motion.nav> */}
-    </div>
+    </nav>
   );
 };
 

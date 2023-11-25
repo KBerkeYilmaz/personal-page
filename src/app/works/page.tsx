@@ -15,7 +15,7 @@ const Works: NextPage = () => {
 
   const workItems = [
     {
-      id: 1,
+      id: "api-server-card",
       title: "Web API Server with CRUD Capabilities",
       images: ["/API_Server_SS0.png", "/API_Server_SS1.png"],
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
@@ -29,8 +29,11 @@ const Works: NextPage = () => {
           <h1 className="text-4xl">Works</h1>
         </div>
         <div className="w-full grid grid-cols-2 gap-10 mb-24">
-          {workItems.map((item) => (
-            <Card key={item.id}>
+          {workItems.map((item, index) => (
+            <Card
+              // id={item.id}
+              key={index}
+            >
               {item.images.map((image, index) => (
                 <Image
                   key={index}

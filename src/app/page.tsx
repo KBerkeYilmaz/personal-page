@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import "@root/globals.css";
 import { NextPage } from "next";
 
+
+
 const Home: NextPage = () => {
   return (
     <div>

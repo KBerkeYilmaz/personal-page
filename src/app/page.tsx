@@ -1,11 +1,8 @@
-"use client";
-
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "@root/globals.css";
 import { NextPage } from "next";
-
-
+import Button from "@/components/UI/Button";
 
 const Home: NextPage = () => {
   return (
@@ -129,16 +126,7 @@ const Home: NextPage = () => {
           transition={{ duration: 0.8, delay: 2.9 }}
         ></h2> */}
       </div>
-      <div className="flex items-center justify-center w-full my-10">
-        <button
-          className="text-text text-2xl w-44 h-20 bg-primary rounded-full p-4 hover:shadow-3xl hover:shadow-primary hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out"
-          onClick={() =>
-            (window.location.href = "mailto:kberkeyilmaz@gmail.com")
-          }
-        >
-          Contact
-        </button>
-      </div>
+      <Button />
     </div>
   );
 };

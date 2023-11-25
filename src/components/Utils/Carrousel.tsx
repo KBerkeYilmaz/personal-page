@@ -4,8 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 
 interface CarouselProps {
-  items: Array<any>;
-  onItemSelect?: (itemId: number) => void;
   className?: string;
 }
 
@@ -43,7 +41,7 @@ const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
 };
 
-export const Example: React.FC<CarouselProps> = (props) => {
+const Carrousel: React.FC<CarouselProps> = (props) => {
   const [[page, direction], setPage] = useState([0, 0]);
 
   // We only have 3 images, but we paginate them absolutely (ie 1, 2, 3, 4, 5...) and
@@ -103,3 +101,5 @@ export const Example: React.FC<CarouselProps> = (props) => {
     </>
   );
 };
+
+export default Carrousel;

@@ -3,8 +3,9 @@
 import { useState } from "react";
 import { NextPage } from "next";
 import Card from "@/components/UI/Card";
-import Image from "next/image";
 import ScrollBar from "@/components/UI/ScrollBar";
+import Carrousel from "@/components/Utils/Carrousel";
+
 
 const Works: NextPage = () => {
   const [activeElement, setActiveElement] = useState(null);
@@ -28,23 +29,15 @@ const Works: NextPage = () => {
         <div className="flex w-full p-4">
           <h1 className="text-4xl">Works</h1>
         </div>
-        <div className="w-full grid grid-cols-2 gap-10 mb-24">
+        <div className="w-full grid grid-cols-2 gap-10 mb-24 max-h-fit">
           {workItems.map((item, index) => (
             <Card
               // id={item.id}
               key={index}
             >
-              {item.images.map((image, index) => (
-                <Image
-                  key={index}
-                  src={image}
-                  width={1000}
-                  height={100}
-                  alt={`Image for ${item.title}`}
-                />
-              ))}
+              <Carrousel />
               <h2 className="p-4">{item.title}</h2>
-              <p className="p-4">{item.description}</p>
+              {<p className="p-4">{item.description}</p>}
             </Card>
           ))}
         </div>

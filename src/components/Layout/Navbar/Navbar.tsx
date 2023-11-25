@@ -32,7 +32,7 @@ const Navbar = () => {
             <li
               id={item.id}
               key={index}
-              className={`li-hover-animate from-primary-to-accent cursor-pointer ${
+              className={`li-hover-animate from-primary-to-accent cursor-pointer will-change-transform ${
                 isActive
                   ? "scale-105 -translate-y-1"
                   : "hover:-translate-y-1 hover:scale-105"

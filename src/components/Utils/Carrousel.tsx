@@ -28,7 +28,7 @@ const variants = {
   },
 };
 
-const images = ["/API_Server_SS0.png", "/API_Server_SS0.png"];
+const images = ["/API_Server_SS0.webp", "/API_Server_SS1.webp"];
 
 /**
  * Experimenting with distilling swipe offset and velocity into a single variable, so the
@@ -59,8 +59,10 @@ const Carrousel: React.FC<CarouselProps> = (props) => {
       <AnimatePresence
         initial={false}
         custom={direction}
+
       >
         <motion.img
+          className="absolute inset-0 w-full h-full object-contain"
           key={page}
           src={images[imageIndex]}
           custom={direction}

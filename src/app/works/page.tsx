@@ -6,7 +6,6 @@ import Card from "@/components/UI/Card";
 import ScrollBar from "@/components/UI/ScrollBar";
 import Carrousel from "@/components/Utils/Carrousel";
 
-
 const Works: NextPage = () => {
   const [activeElement, setActiveElement] = useState(null);
 
@@ -18,7 +17,7 @@ const Works: NextPage = () => {
     {
       id: "api-server-card",
       title: "Web API Server with CRUD Capabilities",
-      images: ["/API_Server_SS0.png", "/API_Server_SS1.png"],
+      images: ["/API_Server_SS0.webp", "/API_Server_SS1.webp"],
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     },
   ];
@@ -35,7 +34,10 @@ const Works: NextPage = () => {
               // id={item.id}
               key={index}
             >
-              <Carrousel />
+              {" "}
+              <div className="relative h-[300px] overflow-hidden">
+                <Carrousel />
+              </div>
               <h2 className="p-4">{item.title}</h2>
               {<p className="p-4">{item.description}</p>}
             </Card>

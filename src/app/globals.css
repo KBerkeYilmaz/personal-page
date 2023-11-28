@@ -12,7 +12,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -81,13 +80,23 @@ body {
 }
 
 .scrollbar-transparent::-webkit-scrollbar-thumb {
-  background: transparent; 
+  background: transparent;
 }
 
 .scrollbar-transparent::-webkit-scrollbar-track {
-  background: transparent; 
+  background: transparent;
 }
 
 .is-active {
   transform: scale(1.05);
+}
+
+.card-blur {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.7px);
+  -webkit-backdrop-filter: blur(5.7px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }

@@ -19,13 +19,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
+    <nav className="absolute top-0 right-0 left-0 ">
       {/* <motion.nav
     //   initial={{ opacity: 0, y: 30 }}
     //   animate={{ opacity: 1, y: 0 }}
     //   transition={{ duration: 0.8, delay: 3.5 }}
     // > */}
-      <ul className="text-text  bg-transparent text-2xl flex p-10 flex-col border-r-2 border-primary shadow-right h-fit gap-24">
+      <ul className="text-text  bg-transparent text-xl flex p-10 h-fit gap-24">
         {listItems.map((item, index) => {
           const isActive = activeItem === index;
           return (

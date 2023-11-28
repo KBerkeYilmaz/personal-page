@@ -1,10 +1,10 @@
 import { Props } from "@/libs/types";
+import "@root/globals.css";
 
-const cardClasses = "bg-text text-background p-5 rounded-md cursor-pointer overflow-hidden relative";
+const cardClasses = "card-blur overflow-hidden relative";
 
-const Card: React.FC<Props> = ({ children, className }) => {
-  return <div className={`${cardClasses} ${className}`}>{children}</div>;
+const Card: React.FC<Props> = ({ children, className, id }) => {
+  return <div id={id} className={`${cardClasses} ${className}`}>{children}</div>;
 };
 
 export default Card;
-

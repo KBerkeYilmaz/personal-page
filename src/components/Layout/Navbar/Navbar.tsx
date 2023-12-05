@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import "@root/globals.css";
 
 const listItems = [
@@ -18,12 +19,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 right-0 left-0 w-screen flex justify-end">
-      {/* <motion.nav
-    //   initial={{ opacity: 0, y: 30 }}
-    //   animate={{ opacity: 1, y: 0 }}
-    //   transition={{ duration: 0.8, delay: 3.5 }}
-    // > */}
+      <motion.nav
+      className="fixed top-0 right-0 left-0 md:w-screen flex justify-end"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.88 }}
+    >
       <ul className="text-text  bg-transparent text-xl flex justify-between p-10 h-fit outline-2 w-full">
         <div className="flex gap-4">
           {/************* SVG 1 *********************/}
@@ -159,8 +160,7 @@ const Navbar = () => {
           })}
         </div>
       </ul>
-      {/* </motion.nav> */}
-    </nav>
+      </motion.nav>
   );
 };
 

@@ -12,7 +12,7 @@ const Home: NextPage = () => {
       <motion.div
         initial={{ opacity: 0, x: 15 }}
         animate={{ opacity: 1, x: -5 }}
-        transition={{ duration: 1.3 }}
+        transition={{ duration: 0.8 }}
       >
         <motion.svg
           id="welcome_svg"
@@ -42,7 +42,7 @@ const Home: NextPage = () => {
         <motion.h2
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.7 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
         >
           Hi, my name is Berke Yilmaz. &nbsp;
         </motion.h2>
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
           className="text-justify"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 2.3 }}
+          transition={{ duration: 0.8, delay: 1.7 }}
         >
           I&apos;m a{" "}
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent ">
@@ -72,7 +72,7 @@ const Home: NextPage = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 2.9 }}
+          transition={{ duration: 0.8, delay: 1.7 }}
         >
           <Button
             className="text-text text-2xl w-44 h-20 bg-primary hover:shadow-3xl hover:shadow-primary "

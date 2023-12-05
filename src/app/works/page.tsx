@@ -47,7 +47,7 @@ const Works: NextPage = () => {
                 key={index}
               >
                 {" "}
-                <div className="relative h-[300px] overflow-hidden">
+                <div className="relative h-[300px] overflow-hidden cursor-pointer">
                   <Carrousel images={item.images} />
                 </div>
                 <h2 className="p-4">{item.title}</h2>

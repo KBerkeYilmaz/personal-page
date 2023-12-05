@@ -69,17 +69,17 @@ const Home: NextPage = () => {
         ></motion.h2> */}
       </div>
       <div className="flex items-center justify-center w-full my-10">
-        <motion.button
-          className="text-text text-2xl w-44 h-20 bg-primary rounded-full p-4 hover:shadow-3xl hover:shadow-primary hover:-translate-y-1 hover:scale-105 transition duration-300 ease-in-out"
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 2.9 }}
-          onClick={() =>
-            (window.location.href = "mailto:kberkeyilmaz@gmail.com")
-          }
         >
-          Contact
-        </motion.button>
+          <Button
+            className="text-text text-2xl w-44 h-20 bg-primary hover:shadow-3xl hover:shadow-primary "
+          >
+            Contact
+          </Button>
+        </motion.div>
       </div>
     </div>
   );

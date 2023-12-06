@@ -28,13 +28,11 @@ const MainLayout: React.FC<Props> = ({ children }) => {
       style={{ backgroundColor, transition: "background-color 0.3s ease" }}
     >
       <MouseTracker />
-      <main className="w-3/4 h-full flex justify-center">
-        <div className="w-3/4 h-full flex flex-col items-start justify-center">
+      <main className="w-full h-full flex justify-center items-center">
+        <div className="w-3/4 h-full flex flex-col items-centers justify-center">
           {children}
         </div>
-        <div className="w-1/4 min-h-full h-fit flex items-center justify-end">
           <Navbar />
-        </div>
       </main>
     </div>
   );

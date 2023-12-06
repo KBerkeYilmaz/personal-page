@@ -22,7 +22,11 @@ const config: Config = {
       },
       boxShadow: {
         '3xl': '0 10px 90px 5px rgba(0, 0, 0, 0.3)',
+      },
+      textShadow: {
+        'lg': '2px 2px 8px rgba(255, 255, 255, 0.5)',
       }
+  
     },
   },
   plugins: [],

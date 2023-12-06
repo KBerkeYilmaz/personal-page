@@ -9,7 +9,7 @@ const listItems = [
   { placeholder: "Home", id: "home-btn", href: "/" },
   { placeholder: "About Me", id: "about-btn", href: "/about" },
   { placeholder: "Works", id: "works-btn", href: "/works" },
-  // { placeholder: "Résumé", id: "cv-btn", href: "/" },
+  { placeholder: "Resume", id: "cv-btn", href: "/resume/KBerkeYilmazCV.pdf" },
 ];
 
 const Navbar = () => {
@@ -19,11 +19,8 @@ const Navbar = () => {
   };
 
   return (
-      <motion.nav
+      <nav
       className="fixed top-0 right-0 left-0 md:w-screen flex justify-end"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.88 }}
     >
       <ul className="text-text  bg-transparent text-xl flex justify-between p-10 h-fit outline-2 w-full">
         <div className="flex gap-4">
@@ -45,8 +42,8 @@ const Navbar = () => {
                 <g
                   id="Page-1"
                   stroke="none"
-                  stroke-width="1"
-                  fill-rule="evenodd"
+                  strokeWidth="1"
+                  fillRule="evenodd"
                 >
                   <g
                     id="Dribbble-Light-Preview"
@@ -139,7 +136,7 @@ const Navbar = () => {
               <li
                 id={item.id}
                 key={index}
-                className={`li-hover-animate from-primary-to-accent cursor-pointer will-change-transform ${
+                className={`li-hover-animate from-primary-to-accent cursor-pointer p-2 will-change-transform ${
                   isActive
                     ? "scale-105 -translate-y-[0.10rem]"
                     : "hover:-translate-y-1 hover:scale-105"
@@ -160,7 +157,7 @@ const Navbar = () => {
           })}
         </div>
       </ul>
-      </motion.nav>
+      </nav>
   );
 };
 

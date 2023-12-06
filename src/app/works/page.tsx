@@ -2,11 +2,10 @@
 
 import { useState, useRef } from "react";
 import { NextPage } from "next";
-import { motion, AnimatePresence } from "framer-motion";
-import Card from "@/components/UI/Card";
+import Card from "@/components/UI/Card.server";
 import ScrollBar from "@/components/UI/ScrollBar";
 import Carrousel from "@/components/UI/Carrousel";
-import { inherits } from "util";
+import Button from "@/components/UI/Button";
 
 const workItems = [
   {
@@ -33,14 +32,13 @@ const Works: NextPage = () => {
     visible: { opacity: 1 },
   };
 
-  
-    return (
-      <ScrollBar>
-        <div className="flex flex-col justify-start items-center gap-10">
-          <div className="flex w-full p-4">
-            <h1 className="text-4xl">Works</h1>
-          </div>
-          <div className="w-full grid grid-cols-2 gap-10 mb-24 max-h-fit">
+  return (
+    <ScrollBar>
+      <div className="flex flex-col justify-start items-center gap-10 mt-40">
+        <div className="flex w-full p-4">
+          <h1 className="text-4xl">Works</h1>
+        </div>
+        <div className="w-full grid grid-cols-2 gap-10 mb-24 max-h-fit">
             {workItems.map((item, index) => (
               <Card
                 // id={item.id}
@@ -55,10 +53,9 @@ const Works: NextPage = () => {
               </Card>
             ))}
           </div>
-        </div>
-      </ScrollBar>
-    );
-  };
-  
-  
+      </div>
+    </ScrollBar>
+  );
+};
+
 export default Works;

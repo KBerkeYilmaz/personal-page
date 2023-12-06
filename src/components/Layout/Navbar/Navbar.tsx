@@ -9,7 +9,13 @@ const listItems = [
   { placeholder: "Home", id: "home-btn", href: "/" },
   { placeholder: "About Me", id: "about-btn", href: "/about" },
   { placeholder: "Works", id: "works-btn", href: "/works" },
-  { placeholder: "Resume", id: "cv-btn", href: "/resume/KBerkeYilmazCV.pdf" },
+  {
+    placeholder: "Resume",
+    id: "cv-btn",
+    href: "/resume/KBerkeYilmazCV.pdf",
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
 ];
 
 const Navbar = () => {
@@ -19,9 +25,7 @@ const Navbar = () => {
   };
 
   return (
-      <nav
-      className="fixed top-0 right-0 left-0 md:w-screen flex justify-end"
-    >
+    <nav className="fixed top-0 right-0 left-0 md:w-screen flex justify-end">
       <ul className="text-text  bg-transparent text-xl flex justify-between p-10 h-fit outline-2 w-full">
         <div className="flex gap-4">
           {/************* SVG 1 *********************/}
@@ -143,7 +147,12 @@ const Navbar = () => {
                 } transition duration-300 ease-out`}
                 onClick={() => handleItemClick(index)}
               >
-                <Link href={item.href}>
+                <Link
+                  href={item.href}
+                  target={item.target ? item.target : undefined}
+                  rel={item.rel ? item.rel : undefined}
+
+                >
                   <div
                     className={`${
                       isActive ? "text-accent pointer-events-none" : ""
@@ -157,7 +166,7 @@ const Navbar = () => {
           })}
         </div>
       </ul>
-      </nav>
+    </nav>
   );
 };
 

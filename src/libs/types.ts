@@ -4,3 +4,10 @@ export interface Props {
   children: ReactNode;
   className?: string;
 }
+
+
+export interface ButtonProps extends Props {  
+  onClick?: () => void;  
+}
+
+ 

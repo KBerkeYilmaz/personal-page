@@ -65,7 +65,12 @@ const Home: NextPage = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.7 }}
         >
-          <Button className="text-text text-2xl w-44 h-20 bg-primary hover:shadow-3xl hover:shadow-primary hover:-translate-y-1 hover:scale-105">
+          <Button
+            className="text-text text-2xl w-44 h-20 bg-primary hover:shadow-3xl hover:shadow-primary hover:-translate-y-1 hover:scale-105"
+            onClick={() =>
+              (window.location.href = "mailto:kberkeyilmaz@gmail.com")
+            }
+          >
             Contact
           </Button>
         </motion.div>

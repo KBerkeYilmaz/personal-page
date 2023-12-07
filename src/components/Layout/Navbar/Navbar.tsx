@@ -77,7 +77,7 @@ const Navbar = () => {
               rel="noreferrer noopener"
             >
               <svg
-                className="fill-white hover:scale-110 transition-all ease-in cursor-pointer hover:fill-blue-600"
+                className="fill-white hover:scale-110 transition-all ease-in cursor-pointer hover:fill-[#0072b1]"
                 height="40px"
                 width="40px"
                 version="1.1"
@@ -111,7 +111,7 @@ const Navbar = () => {
                 height="40px"
                 viewBox="0 0 97.75 97.75"
                 xmlSpace="preserve"
-                className="fill-white hover:scale-110 transition-all ease-in cursor-pointer hover:fill-blue-400"
+                className="fill-white hover:scale-110 transition-all ease-in cursor-pointer hover:fill-[#1DA1F2]"
               >
                 <g>
                   <path
@@ -142,7 +142,7 @@ const Navbar = () => {
               <li
                 id={item.id}
                 key={index}
-                className={`li-hover-animate from-primary-to-accent cursor-pointer will-change-transform p-2 flex ${
+                className={`li-hover-animate from-primary-to-accent cursor-pointer will-change-transform p-2 flex h-full w-fit ${
                   isActive
                     ? "scale-105 -translate-y-[0.10rem]"
                     : "hover:-translate-y-1 hover:scale-105"
@@ -154,7 +154,7 @@ const Navbar = () => {
                   rel={item.rel ? item.rel : undefined}
                   onClick={() => handleItemClick(index)}
 
-                  className={` w-max 
+                  className={` w-full h-full flex items-center justify-center 
                   ${
                     isActive ? "text-accent pointer-events-none" : ""
                   }`}

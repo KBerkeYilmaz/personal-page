@@ -24,12 +24,12 @@ const MainLayout: React.FC<Props> = ({ children }) => {
   const backgroundColor = `rgba(0, 0, 0, ${Math.min(scrollY / 1000, 0.5)})`;
   return (
     <div
-      className="landing-page bg-background w-screen h-screen flex flex-col items-center"
+      className="landing-page bg-background w-screen h-[100svh] flex flex-col items-center justify-center"
       style={{ backgroundColor, transition: "background-color 0.3s ease" }}
     >
       <MouseTracker />
       <main className="w-full h-full flex justify-center items-center">
-        <div className="w-3/4 h-full flex flex-col items-centers justify-center">
+        <div className="w-3/4 h-full flex flex-col items-center justify-center">
           {children}
         </div>
           <Navbar />

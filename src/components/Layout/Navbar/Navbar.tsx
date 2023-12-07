@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import "@root/globals.css";
@@ -20,9 +20,11 @@ const listItems = [
 
 const Navbar = () => {
   const [activeItem, setActiveItem] = useState<number>(0);
-  const handleItemClick = (key: number) => {
+  
+  const handleItemClick = useCallback((key: number) => {
+    console.log(key)
     setActiveItem(key);
-  };
+  }, []);
 
   return (
     <nav className="fixed top-0 right-0 left-0 md:w-screen flex justify-end">
@@ -140,26 +142,24 @@ const Navbar = () => {
               <li
                 id={item.id}
                 key={index}
-                className={`li-hover-animate from-primary-to-accent cursor-pointer p-2 will-change-transform ${
+                className={`li-hover-animate from-primary-to-accent cursor-pointer will-change-transform p-2 flex ${
                   isActive
                     ? "scale-105 -translate-y-[0.10rem]"
                     : "hover:-translate-y-1 hover:scale-105"
                 } transition duration-300 ease-out`}
-                onClick={() => handleItemClick(index)}
               >
                 <Link
                   href={item.href}
                   target={item.target ? item.target : undefined}
                   rel={item.rel ? item.rel : undefined}
+                  onClick={() => handleItemClick(index)}
 
+                  className={` w-max 
+                  ${
+                    isActive ? "text-accent pointer-events-none" : ""
+                  }`}
                 >
-                  <div
-                    className={`${
-                      isActive ? "text-accent pointer-events-none" : ""
-                    }`}
-                  >
-                    {item.placeholder}
-                  </div>
+                  {item.placeholder}
                 </Link>
               </li>
             );

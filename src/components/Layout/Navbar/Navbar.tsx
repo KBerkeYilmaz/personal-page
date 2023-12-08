@@ -27,8 +27,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 right-0 left-0 md:w-screen flex justify-end">
-      <ul className="text-text  bg-transparent text-xl flex justify-between p-10 h-fit outline-2 w-full">
+    <nav className="fixed top-0 right-0 left-0 md:w-screen flex justify-end lg:h-[7.8rem] ">
+      <ul className="text-text  bg-transparent text-xl flex justify-between p-10 outline-2 w-full">
         <div className="flex gap-4">
           {/************* SVG 1 *********************/}
           <div>
@@ -38,8 +38,8 @@ const Navbar = () => {
               rel="noreferrer noopener"
             >
               <svg
-                width="40px"
-                height="40px"
+                width="30px"
+                height="30px"
                 viewBox="0 0 20 20"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -78,8 +78,8 @@ const Navbar = () => {
             >
               <svg
                 className="fill-white hover:scale-110 transition-all ease-in cursor-pointer hover:fill-[#0072b1]"
-                height="40px"
-                width="40px"
+                height="30px"
+                width="30px"
                 version="1.1"
                 id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -107,8 +107,8 @@ const Navbar = () => {
                 version="1.1"
                 id="Capa_1"
                 xmlns="http://www.w3.org/2000/svg"
-                width="40px"
-                height="40px"
+                width="30px"
+                height="30px"
                 viewBox="0 0 97.75 97.75"
                 xmlSpace="preserve"
                 className="fill-white hover:scale-110 transition-all ease-in cursor-pointer hover:fill-[#1DA1F2]"

@@ -29,7 +29,7 @@ const MainLayout: React.FC<Props> = ({ children }) => {
     >
       <MouseTracker />
       <main className="w-full h-full flex justify-center items-center">
-        <div className="w-3/4 h-full flex flex-col items-center justify-center">
+        <div className="w-3/4 h-full flex flex-col items-center justify-center lg:pt-[7.8rem]">
           {children}
         </div>
           <Navbar />

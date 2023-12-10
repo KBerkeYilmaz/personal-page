@@ -18,14 +18,14 @@ const listItems = [
   },
 ];
 
-const viewPortInnerWidth = window.innerWidth;
-
 const Navbar = () => {
   const [activeItem, setActiveItem] = useState<number>(0);
   const [svgHeight, setSvgHeight] = useState("30");
   const [svgWidth, setSvgWidth] = useState("30");
 
   useEffect(() => {
+    const viewPortInnerWidth = window.innerWidth;
+
     const handleResize = () => {
       if (viewPortInnerWidth < 400) {
         setSvgHeight("20");
@@ -67,13 +67,16 @@ const Navbar = () => {
               target="_blank"
               rel="noreferrer noopener"
             >
-              <svg
+              <motion.svg
+                className="fill-white hover:scale-110 transition-all ease cursor-pointer hover:fill-orange-400"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
                 width={`${svgWidth}px`}
                 height={`${svgHeight}px`}
                 viewBox="0 0 20 20"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
-                className="fill-white hover:scale-110 transition-all ease cursor-pointer hover:fill-orange-400"
               >
                 <g
                   id="Page-1"
@@ -96,7 +99,7 @@ const Navbar = () => {
                     </g>
                   </g>
                 </g>
-              </svg>
+              </motion.svg>
             </a>
           </div>
           {/************* SVG 2 *********************/}
@@ -106,10 +109,13 @@ const Navbar = () => {
               target="_blank"
               rel="noreferrer noopener"
             >
-              <svg
+              <motion.svg
                 className="fill-white hover:scale-110 transition-all ease-in cursor-pointer hover:fill-[#0072b1]"
                 width={`${svgWidth}px`}
                 height={`${svgHeight}px`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
                 version="1.1"
                 id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +129,7 @@ const Navbar = () => {
 	              c-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,0.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6c35.5,0,63.3,23,63.3,72.4V508.1z
 	              "
                 />
-              </svg>
+              </motion.svg>
             </a>
           </div>
           {/************* SVG 3 *********************/}
@@ -133,12 +139,15 @@ const Navbar = () => {
               target="_blank"
               rel="noreferrer noopener"
             >
-              <svg
+              <motion.svg
                 version="1.1"
                 id="Capa_1"
                 xmlns="http://www.w3.org/2000/svg"
                 width={`${svgWidth}px`}
                 height={`${svgHeight}px`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8 }}
                 viewBox="0 0 97.75 97.75"
                 xmlSpace="preserve"
                 className="fill-white hover:scale-110 transition-all ease-in cursor-pointer hover:fill-[#1DA1F2]"
@@ -159,7 +168,7 @@ const Navbar = () => {
 		                C83.759,31.175,81.299,33.744,78.43,35.841z"
                   />
                 </g>
-              </svg>
+              </motion.svg>
             </a>
           </div>
         </div>

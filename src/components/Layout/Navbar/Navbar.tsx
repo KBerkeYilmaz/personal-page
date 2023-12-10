@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import "@root/globals.css";
@@ -18,16 +18,46 @@ const listItems = [
   },
 ];
 
+const viewPortInnerWidth = window.innerWidth;
+
 const Navbar = () => {
   const [activeItem, setActiveItem] = useState<number>(0);
-  
+  const [svgHeight, setSvgHeight] = useState("30");
+  const [svgWidth, setSvgWidth] = useState("30");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (viewPortInnerWidth < 400) {
+        setSvgHeight("20");
+        setSvgWidth("20");
+      } else if (viewPortInnerWidth >= 400 && viewPortInnerWidth < 768) {
+        setSvgHeight("30");
+        setSvgWidth("30");
+      } else if (viewPortInnerWidth >= 768 && viewPortInnerWidth < 1024) {
+        setSvgHeight("40");
+        setSvgWidth("40");
+      } else if (viewPortInnerWidth >= 1024 && viewPortInnerWidth < 2560) {
+        setSvgHeight("40");
+        setSvgWidth("40");
+      } else {
+        setSvgHeight("65");
+        setSvgWidth("65");
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const handleItemClick = useCallback((key: number) => {
-    console.log(key)
+    console.log(key);
     setActiveItem(key);
   }, []);
 
   return (
-    <nav className="fixed top-0 right-0 left-0 md:w-screen flex justify-end lg:h-[7.8rem] ">
+    <nav className="fixed top-0 right-0 left-0 w-screen flex justify-center lg:h-[7.8rem] ">
       <ul className="text-text  bg-transparent text-xl flex justify-between p-10 outline-2 w-full">
         <div className="flex gap-4">
           {/************* SVG 1 *********************/}
@@ -38,8 +68,8 @@ const Navbar = () => {
               rel="noreferrer noopener"
             >
               <svg
-                width="30px"
-                height="30px"
+                width={`${svgWidth}px`}
+                height={`${svgHeight}px`}
                 viewBox="0 0 20 20"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -78,8 +108,8 @@ const Navbar = () => {
             >
               <svg
                 className="fill-white hover:scale-110 transition-all ease-in cursor-pointer hover:fill-[#0072b1]"
-                height="30px"
-                width="30px"
+                width={`${svgWidth}px`}
+                height={`${svgHeight}px`}
                 version="1.1"
                 id="Layer_1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -107,8 +137,8 @@ const Navbar = () => {
                 version="1.1"
                 id="Capa_1"
                 xmlns="http://www.w3.org/2000/svg"
-                width="30px"
-                height="30px"
+                width={`${svgWidth}px`}
+                height={`${svgHeight}px`}
                 viewBox="0 0 97.75 97.75"
                 xmlSpace="preserve"
                 className="fill-white hover:scale-110 transition-all ease-in cursor-pointer hover:fill-[#1DA1F2]"
@@ -153,11 +183,8 @@ const Navbar = () => {
                   target={item.target ? item.target : undefined}
                   rel={item.rel ? item.rel : undefined}
                   onClick={() => handleItemClick(index)}
-
                   className={` w-full h-full p-2 flex items-center justify-center 
-                  ${
-                    isActive ? "text-accent pointer-events-none" : ""
-                  }`}
+                  ${isActive ? "text-accent pointer-events-none" : ""}`}
                 >
                   {item.placeholder}
                 </Link>

@@ -25,14 +25,14 @@ const Home: NextPage = () => {
       } else if (viewPortInnerWidth >= 400 && viewPortInnerWidth < 768) {
         setSvgHeight("60");
         setSvgWidth("280")
-        setSvgAxisX(5)
+        setSvgAxisX(-2)
       } else if (viewPortInnerWidth >= 768 && viewPortInnerWidth < 1024) {
         setSvgHeight("60");
-        setSvgWidth("300")
+        setSvgWidth("280")
         setSvgAxisX(115)
-      } else if (viewPortInnerWidth >= 1024 && viewPortInnerWidth < 1280) {
+      } else if (viewPortInnerWidth >= 1024 && viewPortInnerWidth < 2560) {
         setSvgHeight("120");
-        setSvgWidth("400")
+        setSvgWidth("420")
         setSvgAxisX(-5)
       } else {
         setSvgHeight("220");
@@ -84,7 +84,7 @@ const Home: NextPage = () => {
         </motion.h2>
 
         <motion.p
-          className="text-center lg:text-justify xl:text-[2rem] xl:leading-normal"
+          className="text-center lg:text-justify xl:text-[2rem] xl:leading-snug"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.7 }}

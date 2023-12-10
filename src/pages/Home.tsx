@@ -29,12 +29,15 @@ const Home: NextPage = () => {
       } else if (viewPortInnerWidth >= 768 && viewPortInnerWidth < 1024) {
         setSvgHeight("60");
         setSvgWidth("300")
-        setSvgAxisX(110)
-      } else {
-        setSvgHeight("80");
+        setSvgAxisX(115)
+      } else if (viewPortInnerWidth >= 1024 && viewPortInnerWidth < 1280) {
+        setSvgHeight("120");
         setSvgWidth("400")
         setSvgAxisX(-5)
-
+      } else {
+        setSvgHeight("220");
+        setSvgWidth("700")
+        setSvgAxisX(-5)
       }
     };
 
@@ -58,7 +61,7 @@ const Home: NextPage = () => {
         viewBox="0 0 1892 382"
       >
         <path
-          id="welcome_path"
+          id="welcome-path"
           style={{
             strokeDasharray: "9541.93, 9541.93",
             strokeDashoffset: "7156",
@@ -75,13 +78,13 @@ const Home: NextPage = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.2 }}
-          className="my-2 text-center lg:text-justify"
+          className="my-2 text-center lg:text-justify xl:text-[2rem] xl:leading-normal"
         >
           Hi, my name is Berke Yilmaz. &nbsp;
         </motion.h2>
 
         <motion.p
-          className="text-center lg:text-justify"
+          className="text-center lg:text-justify xl:text-[2rem] xl:leading-normal"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.7 }}

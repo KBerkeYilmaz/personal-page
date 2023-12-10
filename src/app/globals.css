@@ -100,3 +100,11 @@ body {
   -webkit-backdrop-filter: blur(5.7px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+.welcome-path {
+  stroke-dasharray: 9541.93, 9541.93;
+  stroke-dashoffset: 7156;
+  transition: fill 1s ease-in-out 0s;
+  stroke: #D8CEE8;
+  fill: #D8CEE8;
+}

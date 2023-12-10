@@ -135,7 +135,7 @@ const Navbar = () => {
         </div>
 
         {/******************* LIST ITEMS *******************/}
-        <div className="flex gap-10 items-center">
+        <div className="flex gap-6 items-center">
           {listItems.map((item, index) => {
             const isActive = activeItem === index;
             return (
@@ -154,7 +154,7 @@ const Navbar = () => {
                   rel={item.rel ? item.rel : undefined}
                   onClick={() => handleItemClick(index)}
 
-                  className={` w-full h-full flex items-center justify-center 
+                  className={` w-full h-full p-2 flex items-center justify-center 
                   ${
                     isActive ? "text-accent pointer-events-none" : ""
                   }`}

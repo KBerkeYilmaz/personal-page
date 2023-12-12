@@ -19,15 +19,15 @@ const Home: NextPage = () => {
       if (viewPortInnerWidth < 400) {
         setSvgHeight("40");
         setSvgWidth("240");
-        setSvgAxisX(3);
+        setSvgAxisX(0);
       } else if (viewPortInnerWidth >= 400 && viewPortInnerWidth < 768) {
         setSvgHeight("60");
         setSvgWidth("280");
-        setSvgAxisX(-2);
+        setSvgAxisX(0);
       } else if (viewPortInnerWidth >= 768 && viewPortInnerWidth < 1024) {
         setSvgHeight("60");
         setSvgWidth("280");
-        setSvgAxisX(115);
+        setSvgAxisX(120);
       } else if (viewPortInnerWidth >= 1024 && viewPortInnerWidth < 2560) {
         setSvgHeight("120");
         setSvgWidth("420");

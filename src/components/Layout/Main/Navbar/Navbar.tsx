@@ -18,6 +18,15 @@ const listItems = [
   },
 ];
 
+const icons = [
+  { href: "https://github.com/KBerkeYilmaz", hover: "hover:fill-orange-400" },
+  {
+    href: "https://www.linkedin.com/in/kutalmis-berke-yilmaz/",
+    hover: "hover:fill-[#0072b1]",
+  },
+  { href: "https://twitter.com/KutalmisY", hover: "hover:fill-[#1DA1F2]" },
+];
+
 const Navbar = () => {
   const [activeItem, setActiveItem] = useState<number>(0);
   const [svgHeight, setSvgHeight] = useState("30");

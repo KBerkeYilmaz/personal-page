@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import MouseTracker from "@/components/Effects/mouseTracker";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "./Navbar/Navbar";
 import { Props } from "@/libs/types"
 
 const MainLayout: React.FC<Props> = ({ children }) => {
@@ -29,12 +29,12 @@ const MainLayout: React.FC<Props> = ({ children }) => {
     >
       <MouseTracker />
       <Navbar />
-      <main className="w-full h-full flex justify-center items-center">
-        <div className="w-3/4 h-full flex flex-col items-center justify-center lg:pt-[7.8rem]">
+      <div className="w-full h-full flex justify-center items-center">
+        <main className="w-3/4 h-full flex flex-col items-center justify-center lg:pt-[7.8rem]">
           {children}
-        </div>
+        </main>
           
-      </main>
+      </div>
     </div>
   );
 };

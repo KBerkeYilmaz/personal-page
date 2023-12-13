@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import "@root/globals.css";
-
+import "./icons.css";
 const listItems = [
   { placeholder: "Home", id: "home-btn", href: "/" },
   { placeholder: "About Me", id: "about-btn", href: "/about" },
@@ -27,48 +27,74 @@ const icons = [
   { href: "https://twitter.com/KutalmisY", hover: "hover:fill-[#1DA1F2]" },
 ];
 
+const closeButton =
+  "M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z";
+const burgerButton =
+  "M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z";
 const Navbar = () => {
   const [activeItem, setActiveItem] = useState<number>(0);
-  const [svgHeight, setSvgHeight] = useState("30");
-  const [svgWidth, setSvgWidth] = useState("30");
+  const [menuActive, setMenuActive] = useState<boolean>(false);
+  const [svgMorph, setSvgMorph] = useState(burgerButton);
+  const hasMounted = useRef(false);
 
   useEffect(() => {
-    const viewPortInnerWidth = window.innerWidth;
-
-    const handleResize = () => {
-      if (viewPortInnerWidth < 400) {
-        setSvgHeight("20");
-        setSvgWidth("20");
-      } else if (viewPortInnerWidth >= 400 && viewPortInnerWidth < 768) {
-        setSvgHeight("30");
-        setSvgWidth("30");
-      } else if (viewPortInnerWidth >= 768 && viewPortInnerWidth < 1024) {
-        setSvgHeight("40");
-        setSvgWidth("40");
-      } else if (viewPortInnerWidth >= 1024 && viewPortInnerWidth < 2560) {
-        setSvgHeight("40");
-        setSvgWidth("40");
-      } else {
-        setSvgHeight("65");
-        setSvgWidth("65");
-      }
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    // Set the flag to true once the component has mounted
+    hasMounted.current = true;
   }, []);
 
+  useEffect(() => {
+    // Only run this logic if the component has already mounted
+    if (hasMounted.current) {
+      const timer = setTimeout(() => {
+        setSvgMorph(menuActive ? closeButton : burgerButton);
+      }, 400);
+
+      return () => clearTimeout(timer);
+    }
+  }, [menuActive]);
+
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);
+  };
+
   const handleItemClick = useCallback((key: number) => {
-    console.log(key);
     setActiveItem(key);
+    setMenuActive(false);
   }, []);
 
   return (
-    <nav className="fixed top-0 right-0 left-0 w-screen flex justify-center lg:h-[7.8rem] ">
-      <ul className="text-text  bg-transparent text-xl flex justify-between p-10 outline-2 w-full">
-        <div className="flex gap-4">
+    <nav className="text-text fixed top-0 right-0 left-0 w-screen lg:p-8 lg:h-[7.8rem] z-40 flex flex-col lg:flex-row lg:items-center justify-start lg:justify-between">
+      <button className="cursor-pointer block lg:hidden absolute top-8 right-8 z-50">
+        <svg
+          className={
+            hasMounted.current
+              ? menuActive
+                ? "spin-animation"
+                : "reverse-spin-animation"
+              : ""
+          }
+          height="30px"
+          width="30px"
+          fill="white"
+          viewBox={"0 0 448 512"}
+          onClick={() => toggleMenu()}
+        >
+          <path d={svgMorph} />
+        </svg>
+      </button>
+
+      <ul
+        className={`text-text z-40 transition-all duration-500 ease-out w-screen lg:w-full h-screen lg:h-full
+        transform ${
+          menuActive
+            ? "translate-x-0 opacity-100 visible"
+            : "-translate-x-[100vw] opacity-0 invisible"
+        }
+        flex flex-col-reverse justify-between bg-background lg:bg-transparent items-center
+        lg:flex-row lg:justify-between lg:items-center lg:visible lg:opacity-100 lg:translate-x-0
+        md:text-lg lg:text-2xl xl:text-2xl 2xl:text-2xl p-10 outline-2`}
+      >
+        <div className="flex gap-4 items-center p-8 w-full h-fit md:w-min justify-center lg:h-full">
           {/************* SVG 1 *********************/}
           <div>
             <a
@@ -77,12 +103,10 @@ const Navbar = () => {
               rel="noreferrer noopener"
             >
               <motion.svg
-                className="fill-white hover:scale-110 transition-all ease cursor-pointer hover:fill-orange-400"
+                className="navbar-icon fill-white hover:scale-110 transition-all ease cursor-pointer hover:fill-orange-400"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
-                width={`${svgWidth}px`}
-                height={`${svgHeight}px`}
                 viewBox="0 0 20 20"
                 version="1.1"
                 xmlns="http://www.w3.org/2000/svg"
@@ -119,9 +143,7 @@ const Navbar = () => {
               rel="noreferrer noopener"
             >
               <motion.svg
-                className="fill-white hover:scale-110 transition-all ease-in cursor-pointer hover:fill-[#0072b1]"
-                width={`${svgWidth}px`}
-                height={`${svgHeight}px`}
+                className="navbar-icon fill-white hover:scale-110 transition-all ease-in cursor-pointer hover:fill-[#0072b1]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
@@ -152,14 +174,12 @@ const Navbar = () => {
                 version="1.1"
                 id="Capa_1"
                 xmlns="http://www.w3.org/2000/svg"
-                width={`${svgWidth}px`}
-                height={`${svgHeight}px`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
                 viewBox="0 0 97.75 97.75"
                 xmlSpace="preserve"
-                className="fill-white hover:scale-110 transition-all ease-in cursor-pointer hover:fill-[#1DA1F2]"
+                className="navbar-icon fill-white hover:scale-110 transition-all ease-in cursor-pointer hover:fill-[#1DA1F2]"
               >
                 <g>
                   <path
@@ -183,7 +203,10 @@ const Navbar = () => {
         </div>
 
         {/******************* LIST ITEMS *******************/}
-        <div className="flex gap-6 items-center">
+        <div
+          className="flex flex-col justify-center items-center gap-2 mt-8 lg:mt-0 sm:text-3xl
+          lg:flex-row lg:justify-end lg:w-full lg:gap-6"
+        >
           {listItems.map((item, index) => {
             const isActive = activeItem === index;
             return (

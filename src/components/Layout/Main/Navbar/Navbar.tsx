@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import "@root/globals.css";
 import "./icons.css";
 
-
 const listItems = [
   { placeholder: "Home", id: "home-btn", href: "/" },
   { placeholder: "About Me", id: "about-btn", href: "/about" },
@@ -49,7 +48,7 @@ const Navbar = () => {
     if (hasMounted.current) {
       const timer = setTimeout(() => {
         setSvgMorph(menuActive ? closeButton : burgerButton);
-      }, 400);
+      }, 300);
 
       return () => clearTimeout(timer);
     }
@@ -65,8 +64,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="text-text     
-    fixed top-0 right-0 left-0 w-screen lg:p-8 lg:h-[7.8rem] z-40 flex flex-col lg:flex-row lg:items-center justify-start lg:justify-between">
+    <nav
+      className="text-text     
+    fixed top-0 right-0 left-0 w-screen lg:p-8 lg:h-[7.8rem] z-40 flex flex-col lg:flex-row lg:items-center justify-start lg:justify-between"
+    >
       <button className="cursor-pointer block lg:hidden absolute top-8 right-8 z-50">
         <svg
           className={

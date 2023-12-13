@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import "@root/globals.css";
 import { NextPage } from "next";
 import Button from "@/components/UI/Button";
-import Image from "next/image";
+import "@/app/index.css"
 
 const Home: NextPage = () => {
   const [svgHeight, setSvgHeight] = useState("40");
@@ -17,24 +17,14 @@ const Home: NextPage = () => {
       const viewPortInnerWidth = window.innerWidth;
 
       if (viewPortInnerWidth < 400) {
-        setSvgHeight("40");
-        setSvgWidth("240");
         setSvgAxisX(0);
       } else if (viewPortInnerWidth >= 400 && viewPortInnerWidth < 768) {
-        setSvgHeight("60");
-        setSvgWidth("280");
         setSvgAxisX(0);
       } else if (viewPortInnerWidth >= 768 && viewPortInnerWidth < 1024) {
-        setSvgHeight("60");
-        setSvgWidth("280");
-        setSvgAxisX(120);
+        setSvgAxisX(115);
       } else if (viewPortInnerWidth >= 1024 && viewPortInnerWidth < 2560) {
-        setSvgHeight("120");
-        setSvgWidth("420");
-        setSvgAxisX(-5);
+        setSvgAxisX(-15);
       } else {
-        setSvgHeight("220");
-        setSvgWidth("700");
         setSvgAxisX(-5);
       }
     };
@@ -55,8 +45,6 @@ const Home: NextPage = () => {
           className="welcome-path"
           id="welcome_svg"
           xmlns="http://www.w3.org/2000/svg"
-          width={svgWidth}
-          height={svgHeight}
           viewBox="0 0 1892 382"
         >
           <path
@@ -103,31 +91,12 @@ const Home: NextPage = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.7 }}
           >
-            <Button
-              className="text-text text-md lg:text-2xl w-28 lg:w-44 h-16s lg:h-20 bg-primary hover:shadow-3xl hover:shadow-primary hover:-translate-y-1 hover:scale-105 flex justify-center items-center"
-              onClick={() =>
-                (window.location.href = "mailto:kberkeyilmaz@gmail.com")
-              }
-            >
-              Contact
+            <Button className="text-text text-md lg:text-2xl w-28 lg:w-44 h-16s lg:h-20 bg-primary hover:shadow-3xl hover:shadow-primary hover:-translate-y-1 hover:scale-105 flex justify-center items-center">
+              <a href="mailto:kberkeyilmaz@gmail.com">Contact</a>
             </Button>
           </motion.div>
         </div>
       </div>
-      {/* <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 1.7 }}
-        className="w-1/2 h-full flex flex-col items-center relative"
-      >
-        <Image
-          src="/AI-Image-LD.png"
-          className="rounded-full absolute -top-10 right-0"
-          width={540}
-          height={540}
-          alt="AI Generative Portrait"
-        />
-      </motion.div> */}
     </header>
   );
 };

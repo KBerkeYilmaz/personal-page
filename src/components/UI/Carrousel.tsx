@@ -89,7 +89,7 @@ const Carrousel: React.FC<CarouselProps> = (props) => {
         />
       </AnimatePresence>
       <button
-        className="next absolute left-0 z-10 cursor-pointer opacity-0 hover:opacity-100 transition-opacity p-4 top-20"
+        className="next absolute left-0 z-10 cursor-pointer opacity-0 hover:opacity-100 transition-opacity p-4 lg:top-[90px]"
         onClick={() => paginate(-1)}
       >
         <svg
@@ -102,7 +102,7 @@ const Carrousel: React.FC<CarouselProps> = (props) => {
         </svg>
       </button>
       <button
-        className="next absolute right-0 z-10 cursor-pointer opacity-0 hover:opacity-100 transition-opacity p-4 top-28"
+        className="next absolute right-0 z-10 cursor-pointer opacity-0 hover:opacity-100 transition-opacity p-4 lg:top-[90px]"
         onClick={() => paginate(1)}
       >
         <svg

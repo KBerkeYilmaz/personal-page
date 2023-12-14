@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import MouseTracker from "@/components/Effects/mouseTracker";
 import Navbar from "./Navbar/Navbar";
-import { Props } from "@/libs/types"
+import { Props } from "@/libs/types";
 
 const MainLayout: React.FC<Props> = ({ children }) => {
   const [scrollY, setScrollY] = useState(0);
@@ -33,7 +33,6 @@ const MainLayout: React.FC<Props> = ({ children }) => {
         <main className="w-3/4 h-full flex flex-col items-center justify-center lg:pt-[7.8rem]">
           {children}
         </main>
-          
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import Card from "@/components/UI/Card.server";
+import Card from "@/components/UI/Card";
 
 const Modal = () => {
   return (

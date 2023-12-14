@@ -62,7 +62,7 @@ const Carrousel: React.FC<CarouselProps> = (props) => {
         custom={direction}
       >
         <motion.img
-          className="absolute inset-0 w-full h-full object-contain rounded-md"
+          className={`absolute inset-0 object-contain rounded-md ${props.className} `}
           key={page}
           src={images[imageIndex]}
           custom={direction}
@@ -89,7 +89,7 @@ const Carrousel: React.FC<CarouselProps> = (props) => {
         />
       </AnimatePresence>
       <button
-        className="next absolute left-0 z-10 cursor-pointer opacity-0 hover:opacity-100 transition-opacity p-4 top-28"
+        className="next absolute left-0 z-10 cursor-pointer opacity-0 hover:opacity-100 transition-opacity p-4 top-20"
         onClick={() => paginate(-1)}
       >
         <svg
